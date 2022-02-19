@@ -94,7 +94,9 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
 ]
-
+SESSION_COOKIE_AGE = 60 * 60 * 24 * 1
+LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = 'login'
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
