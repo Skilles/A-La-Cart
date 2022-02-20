@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 import django_heroku
+import spoonacular as sp
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -50,7 +51,37 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "app.middleware.profile_middleware.simple_middleware"
 ]
+
+# Logging
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'NOTSET',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose'
+        }
+    },
+    'loggers': {
+        '': {
+            'handlers': ['console'],
+            'level': 'NOTSET',
+        },
+        'django.request': {
+            'handlers': ['console'],
+            'propagate': False,
+            'level': 'ERROR'
+        }
+    }
+}
 
 ROOT_URLCONF = "gettingstarted.urls"
 
@@ -122,3 +153,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'app/media/')
 MEDIA_URL = '/media/'
 
 django_heroku.settings(locals())
+
+spoon_api = sp.API('8e981eaa4b6843c093ffbbd17944c11d')

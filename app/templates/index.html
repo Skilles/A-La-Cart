@@ -3,15 +3,17 @@
 
 {% block content %}
 
-<div class="jumbotron text-center">
-  <div class="container">
-    <a href="/" class="lang-logo">
-      <img src="{% static 'lang-logo.png'%}" alt="logo">
-    </a>
-    <h1>A La Cart</h1>
-    <p>A La Cart is a simple way to find the ingredients you need for your diet.</p>
-    <a type="button" class="btn btn-lg btn-default" href="{% url 'about' %}"><span class="glyphicon glyphicon-flash"></span>Learn More</a>
-    <a type="button" class="btn btn-lg btn-primary" href="{% url 'register' %}"><span class="glyphicon glyphicon-download"></span>Create Account</a>
-  </div>
-</div>
+<header class="text-center text-white d-flex masthead" style="height: 100%;background: url({% static 'img/bg.jpg' %}) no-repeat;background-size: cover;">
+        <div class="container my-auto">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h1 class="text-uppercase"><strong>A LA cart</strong></h1>
+                    <hr>
+                </div>
+            </div>
+            <div class="col-lg-8 mx-auto">
+                <p class="text-faded mb-5">Personalized meal plans and shopping lists</p><a class="btn btn-primary btn-xl" role="button" href="{% url 'register' %}">Create an account</a>
+            </div>
+        </div>
+    </header>
 {% endblock %}

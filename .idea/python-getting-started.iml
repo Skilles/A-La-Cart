@@ -21,6 +21,7 @@
     <orderEntry type="library" name="jquery-3.6.0" level="application" />
     <orderEntry type="library" name="bootstrap-show-password" level="application" />
     <orderEntry type="library" name="all" level="application" />
+    <orderEntry type="library" name="baguettebox.js" level="application" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />

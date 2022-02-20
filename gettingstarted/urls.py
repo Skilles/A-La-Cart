@@ -25,5 +25,7 @@ urlpatterns = [
     path("about/", app.views.about, name="about"),
     path('profile', app.views.profile, name='profile'),
     path('password-change/', app.views.ChangePasswordView.as_view(), name='password_change'),
+    path('create-profile/', app.views.CreateProfileView.as_view(), name='create_profile'),
+    path('recommend/', app.views.RecommendView.as_view(), name='recommend'),
     path("admin/", admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

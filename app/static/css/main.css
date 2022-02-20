@@ -1,0 +1,8 @@
+.fav-icon > .fa + .fa, .fav-icon:hover > .fa {
+  display: none;
+}
+
+.fav-icon:hover > .fa + .fa {
+  display: inherit;
+}
+

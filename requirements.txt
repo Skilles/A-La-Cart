@@ -1,4 +1,7 @@
-django
+django~=4.0.2
 gunicorn
 django-heroku
-pillow
+pillow~=9.0.1
+django-multiselectfield
+requests~=2.27.1
+spoonacular

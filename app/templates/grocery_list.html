@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<header class="text-center text-white d-flex masthead" style="height: 100%;background: url({% static 'img/bg.jpg' %}) no-repeat;background-size: cover;">
+        <div class="container my-auto">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h1 class="text-uppercase">Current Grocery List</h1>
+                    <hr>
+                </div>
+            </div>
+            <div class="col-lg-8 mx-auto">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th style="color: var(--bs-light);border-color: var(--bs-table-striped-color);">Name</th>
+                                <th style="background: var(--bs-table-hover-bg);color: var(--bs-gray-200);border-color: var(--bs-table-striped-color);">Link</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in grocery_list %}
+                            <tr>
+                                <td style="color: var(--bs-white);border-color: var(--bs-table-striped-color);">Cell 3</td>
+                                <td style="color: var(--bs-gray-100);border-color: var(--bs-table-striped-color);">Cell4</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div><a class="btn btn-primary btn-xl" role="button" href="#services">Find Produce Stores Near You</a>
+            </div>
+        </div>
+    </header>
+{% endblock %}

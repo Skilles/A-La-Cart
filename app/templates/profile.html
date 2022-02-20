@@ -3,12 +3,15 @@
 
 {% block content %}
     <div class="row my-3 p-3">
-        <img class="rounded-circle account-img" src="{{ user.profile.avatar.url }} " style="cursor: pointer;"/>
+        <img class="rounded-circle account-img" src="" style="cursor: pointer;"/>
     </div>
     {% if user_form.errors %}
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
             <div id="form_errors">
                 {% for key, value in user_form.errors.items %}
+                    <strong>{{ value }}</strong>
+                {% endfor %}
+            {% for key, value in profile_form.errors.items %}
                     <strong>{{ value }}</strong>
                 {% endfor %}
             </div>
@@ -29,10 +32,13 @@
                     <div class="form-group">
                         <a href="{% url 'password_change' %}">Change Password</a>
                         <hr>
-                        <label class="small mb-1">Change Avatar:</label>
-                        {{ profile_form.avatar }}
+                        <label class="small mb-1">Change Weight:</label> {{ profile_form.weight }}
+                        <label class="small mb-1">Change Height:</label> {{ profile_form.height }}
+                        <label class="small mb-1">Change Sex:</label> {{ profile_form.sex }}
+                        <label class="small mb-1">Change Age:</label> {{ profile_form.age }}
+                        <label class="small mb-1">Change Diet:</label> {{ profile_form.diet }}
+                        <label class="small mb-1">Change Goal:</label> {{ profile_form.goal }}
                     </div>
-                    <label class="small mb-1">Bio:</label> {{ profile_form.bio }}
                 </div>
             </div>
             <br><br>
