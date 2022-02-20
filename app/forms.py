@@ -55,7 +55,7 @@ class UpdateProfileForm(forms.ModelForm):
                                           widget=forms.CheckboxSelectMultiple(attrs={'placeholder': 'allergens',
                                                                                      'class': 'form-control',
                                                                                      }))
-    goal = forms.ChoiceField(choices=[(0, "Lose Weight"), (1, "Gain Weight"), (2, "Maintain Weight")],
+    goal = forms.ChoiceField(choices=[(0, "Lose Weight"), (1, "Maintain Weight"), (2, "Gain Weight")],
                              required=True,
                              widget=forms.Select(attrs={'placeholder': 'goal',
                                                         'class': 'form-control',

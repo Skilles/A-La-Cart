@@ -63,7 +63,7 @@ class SpoonUser:
 
     def generate_recipes(self):
         response = self.api.generate_meal_plan(self.profile.get_diet(), self.profile.get_allergens(),
-                                               self.profile.calories, timeFrame='day')
+                                               self.profile.calories + ((self.profile.goal - 1) * 200), timeFrame='day')
         if response.status_code != 200:
             raise Exception("Exception when calling MealPlanningApi->generate_meal_plan")
 
